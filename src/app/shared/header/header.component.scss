@@ -1,0 +1,32 @@
+.header {
+    position: fixed; /* Se fija en la parte superior */
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: #f3aa48; /* Color principal */
+    padding: 0.5rem 1rem;
+    z-index: 1000; /* Para que quede encima del contenido */
+  
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 1rem;
+    }
+  
+    img {
+      height: 50px;
+      width: auto;
+    }
+  
+    .logo {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #fff;
+      margin: 0;
+    }
+  }
+  

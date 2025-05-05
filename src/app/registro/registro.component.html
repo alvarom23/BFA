@@ -1,0 +1,84 @@
+<div class="registro-container">
+  <h1>Registro BFA</h1>
+
+  <form (ngSubmit)="onSubmit()" [formGroup]="registerForm" novalidate>
+
+    <!-- DNI -->
+    <input type="text" formControlName="dni" placeholder="DNI" required />
+    <div *ngIf="registerForm.get('dni')?.touched && registerForm.get('dni')?.invalid" class="error">
+      DNI inválido. Debe tener 8 números y una letra (ej: 12345678A).
+    </div>
+
+    <!-- Nombre -->
+    <input type="text" formControlName="name" placeholder="Nombre" required />
+    <div *ngIf="registerForm.get('name')?.touched && registerForm.get('name')?.invalid" class="error">
+      El nombre es obligatorio.
+    </div>
+
+    <!-- Apellido -->
+    <input type="text" formControlName="lastName" placeholder="Apellido" required />
+    <div *ngIf="registerForm.get('lastName')?.touched && registerForm.get('lastName')?.invalid" class="error">
+      El apellido es obligatorio.
+    </div>
+
+    <!-- Tipo de Usuario -->
+    <select formControlName="userType" required>
+      <option value="0" disabled selected>Selecciona tipo de usuario</option>
+      <option value="1">Casual</option>
+      <option value="2">Profesional</option>
+    </select>
+    <div *ngIf="registerForm.get('userType')?.touched && registerForm.get('userType')?.invalid" class="error">
+      Debes seleccionar un tipo de usuario.
+    </div>
+
+    <!-- Género -->
+    <select formControlName="gender" required>
+      <option value="" disabled selected>Selecciona tu género</option>
+      <option value="Masculino">Masculino</option>
+      <option value="Femenino">Femenino</option>
+      <option value="Otro">Otro</option>
+    </select>
+    <div *ngIf="registerForm.get('gender')?.touched && registerForm.get('gender')?.invalid" class="error">
+      El género es obligatorio.
+    </div>
+
+    <!-- Nombre de usuario -->
+    <input type="text" formControlName="username" placeholder="Nombre de usuario" required />
+    <div *ngIf="registerForm.get('username')?.touched && registerForm.get('username')?.invalid" class="error">
+      El nombre de usuario es obligatorio.
+    </div>
+
+    <!-- Localidad -->
+    <input type="text" formControlName="location" placeholder="Localidad" required />
+    <div *ngIf="registerForm.get('location')?.touched && registerForm.get('location')?.invalid" class="error">
+      La localidad es obligatoria.
+    </div>
+
+    <!-- Email -->
+    <input type="email" formControlName="email" placeholder="Email" required />
+    <div *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.invalid" class="error">
+      Ingresa un email válido.
+    </div>
+
+    <!-- Contraseña -->
+    <input type="password" formControlName="password" placeholder="Contraseña" required />
+    <div *ngIf="registerForm.get('password')?.touched && registerForm.get('password')?.invalid" class="error">
+      Contraseña obligatoria.
+    </div>
+
+    <!-- Botón de envío -->
+    <button type="submit" [disabled]="registerForm.invalid">Registrarse</button>
+
+  </form>
+
+  <p>¿Ya tienes cuenta? 
+    <a routerLink="/inicio-sesion" style="color: #f3aa48; cursor: pointer;">
+      Iniciar sesión
+    </a>
+  </p>
+
+
+</div>
+
+
+ 
